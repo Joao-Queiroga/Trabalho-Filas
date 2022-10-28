@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Jogo {
 
-	private Scanner scanner = new Scanner(System.in);
 	private int dia, mes, ano, placarSelecao1, placarSelecao2;
 	private String etapa, selecao1, selecao2, local;
 
@@ -31,42 +30,6 @@ public class Jogo {
 		copia = new Jogo(this.dia, this.mes, this.ano, this.placarSelecao1, this.placarSelecao2, this.etapa,
 				this.selecao1, this.selecao2, this.local);
 		return copia;
-	}
-
-	public void ler() {
-		Jogo jogo = new Jogo();
-		String entrada;
-
-		entrada = scanner.nextLine();
-		jogo.setDia(Integer.parseInt(entrada));
-
-		entrada = scanner.nextLine();
-		jogo.setMes(Integer.parseInt(entrada));
-
-		entrada = scanner.nextLine();
-		jogo.setAno(Integer.parseInt(entrada));
-
-		entrada = scanner.nextLine();
-		jogo.setEtapa(entrada);
-
-		entrada = scanner.nextLine();
-		jogo.setSelecao1(entrada);
-
-		entrada = scanner.nextLine();
-		jogo.setPlacarSelecao1(Integer.parseInt(entrada));
-
-		entrada = scanner.nextLine();
-		jogo.setSelecao2(entrada);
-
-		entrada = scanner.nextLine();
-		jogo.setPlacarSelecao2(Integer.parseInt(entrada));
-
-		entrada = scanner.nextLine();
-		jogo.setLocal(entrada);
-
-		jogo = new Jogo(jogo.getDia(), jogo.getMes(), jogo.getAno(), jogo.getPlacarSelecao1(), jogo.getPlacarSelecao2(),
-				jogo.getEtapa(), jogo.getSelecao1(), jogo.getSelecao2(), jogo.getLocal());
-
 	}
 
 	public void imprimir() {

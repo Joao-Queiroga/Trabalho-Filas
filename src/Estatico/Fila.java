@@ -1,18 +1,19 @@
 package Estatico;
 
 public class Fila {
-    private Jogo jogos[] = new Jogo[100];
+    private Jogo jogos[];
     private int frente = 0, tras = 0;
 
-    public Fila(Jogo item) {
-        enfileirar(item);
+    public Fila(int tamanho) {
+        jogos = new Jogo[tamanho];
     }
 
     public Fila() {
+        this(100);
     }
 
     public void enfileirar(Jogo jogo) {
-        if (avanca(tras) != frente)
+        if (this.estaCheia())
             return;
         jogos[tras] = jogo;
         tras = avanca(tras);
@@ -55,13 +56,13 @@ public class Fila {
         return media / posicaoFila;
     }
 
-    private boolean estaCheia(){
+    public boolean estaCheia(){
         if (avanca(tras) == frente)
             return true;
         return false;
     }
 
-    private int avanca(int variavel) {
+    private static int avanca(int variavel) {
         return (variavel + 1) % 100;
     }
 }
